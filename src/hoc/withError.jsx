@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ErrorMessage from '../components/GamesPage/ErrorMessage/ErrorMessage';
+import ErrorMessage from '@components/ErrorMessage';
 
 export const withError = View => {
     return props => {

@@ -1,4 +1,4 @@
-import GamesPage from '../GamesPage';
+import GamesPage from '@containers/GamesPage';
 import styles from'./App.module.css';
 
 const App = () => {
