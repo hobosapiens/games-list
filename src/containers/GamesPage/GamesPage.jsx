@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { withError } from '@hoc/withError';
+import GamesList from '@components/GamesPage/GamesList';
 import { getApiGames } from '@utils/network';
 import { GAME_SERVICE } from '@constants/api';
-import GamesList from '@components/GamesPage/GamesList';
 
 import styles from './GamesPage.module.css';
 
@@ -28,6 +30,11 @@ const GamesPage = ({setError, error}) => {
             {games && <GamesList games={games} />}
         </>
     )
+}
+
+GamesPage.propTypes = {
+    setError: PropTypes.func,
+    error: PropTypes.bool,
 }
 
 export default withError(GamesPage);
