@@ -1,0 +1,1 @@
+export const GAME_SERVICE = 'http://localhost:12345/games.json';
