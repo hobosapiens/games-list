@@ -1,5 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import GamesPage from '@containers/GamesPage';
+import GamePage from '@containers/GamePage';
 import FavoritesPage from '@containers/FavoritesPage';
 import NotFoundPage from '../containers/NotFoundPage';
 
@@ -11,6 +12,14 @@ const routesConfig = [
     {
         path: '/spel',
         element: <GamesPage />
+    },
+    {
+        path: '/spel/:genre',
+        element: <GamesPage />
+    },
+    {
+        path: '/spel/:genre/:namn',
+        element: <GamePage />
     },
     {
         path: '/favoriter',

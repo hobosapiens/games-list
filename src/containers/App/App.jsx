@@ -1,22 +1,20 @@
 import React from 'react';
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import routesConfig from '@routes/routesConfig';
+import Header from '../../components/Header/Header';
 
 const App = () => {
   return (
     <>
-      <ul>
-          <li><NavLink to="/spel">Games</NavLink></li>
-          <li><NavLink to="/favoriter">Favorites</NavLink></li>
-      </ul>
+      <Header />
       <Routes>
-        {routesConfig.map((route, index) => (
+          {routesConfig.map((route, index) => (
           <Route
-            key={index}
-            path={route.path}
-            element={route.element}
-         />
-        ))}
+              key={index}
+              path={route.path}
+              element={route.element}
+          />
+          ))}
       </Routes>
     </>
   )
