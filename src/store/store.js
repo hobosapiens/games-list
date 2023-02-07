@@ -12,7 +12,7 @@ const store = configureStore({
 })
 
 store.subscribe(() => {
-    setLocalStorage('favoriteGames', store.getState().favoriteReducer.items)
+    setLocalStorage('favoriteGames', store.getState().gamesReducer.favorites)
 })
 
  export default store;

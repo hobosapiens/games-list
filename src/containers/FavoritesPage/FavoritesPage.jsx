@@ -7,7 +7,7 @@ import GamesList from '@components/GamesPage/GamesList';
 import styles from './FavoritesPage.module.css';
 
 const FavoritesPage = () => {
-    const favoriteGames = useSelector(state => state.favoriteReducer.items);
+    const favoriteGames = useSelector(state => state.gamesReducer.favorites);
     const storedGames = useSelector(state => state.gamesReducer.items);
     const [games, setGames] = useState(null);
 

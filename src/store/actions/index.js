@@ -14,12 +14,12 @@ export const setError = error => ({
     payload: error
 })
 
-export const setGameToFavorite = game => ({
+export const addGameToFavorite = game => ({
     type: ADD_GAME_TO_FAVORITE,
     payload: game
 })
 
-export const removeGameToFavorite = game => ({
+export const removeGameFromFavorite = game => ({
     type: REMOVE_GAME_TO_FAVORITE,
     payload: game
 })

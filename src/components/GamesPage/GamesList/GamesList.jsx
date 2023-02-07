@@ -10,7 +10,7 @@ const GamesList = ({ games }) => {
     return (
         <ul className={ styles.list }>
             {games.map(({name, short, url, genre}, index) => (
-                <li key={name} className={ styles.item }>
+                <li key={index} className={ styles.item }>
                     <UiToggleFavorite game={short} />
                     <p className={ styles.item__name }><b>{name}</b></p>
                     <Link to={url} className={ styles.item__link }>
