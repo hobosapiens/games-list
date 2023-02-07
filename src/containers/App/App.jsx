@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import routesConfig from '@routes/routesConfig';
 import Header from '../../components/Header/Header';
 import { useDispatch } from "react-redux"
 import { loadGames } from '@store/reducers/gamesReducer';
+import { withError } from '@hoc/withError';
+import { useSelector } from 'react-redux';
 
-const App = () => {
+const App = ({setError}) => {
+  const isError = useSelector(state => state.gamesReducer.error);
   const dispatch = useDispatch();
-  dispatch(loadGames());
+
+  useEffect(() => {
+      dispatch(loadGames());
+      setError(isError);
+  },[dispatch, isError, setError]);
+
   return (
     <>
       <Header />
@@ -24,4 +32,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default withError(App);

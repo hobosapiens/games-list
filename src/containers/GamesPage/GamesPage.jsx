@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { withError } from '@hoc/withError';
 import GamesList from '@components/GamesPage/GamesList';
 import UiLoader from '@components/UI/UiLoader';
 
@@ -13,20 +12,6 @@ const GamesPage = () => {
     const { genre } = useParams();
     const storedGames = useSelector(state => state.gamesReducer.items);
     const [games, setGames] = useState(null);
-
-    // useEffect(() => {
-    //     const getGames = async (url) => {
-    //         const res = await getApiGames(url);
-    //         if (res) {
-    //             setGamesToState(filteredGames(reformatGames(res.games), genre));
-    //             setError(false);
-    //         } else {
-    //             setError(true);
-    //         }
-    //     };
-
-    //     getGames(GAME_SERVICE);
-    // });
 
     useEffect(() => {
         if (storedGames) {
@@ -51,4 +36,4 @@ GamesPage.propTypes = {
     error: PropTypes.bool,
 }
 
-export default withError(GamesPage);
+export default GamesPage;
