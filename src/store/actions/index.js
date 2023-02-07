@@ -1,6 +1,6 @@
 import { 
     ADD_GAME_TO_FAVORITE, 
-    REMOVE_GAME_TO_FAVORITE, 
+    REMOVE_GAME_FROM_FAVORITE, 
     SET_GAMES, SET_ERROR 
 } from '@store/constants/actionTypes';
 
@@ -20,6 +20,6 @@ export const addGameToFavorite = game => ({
 })
 
 export const removeGameFromFavorite = game => ({
-    type: REMOVE_GAME_TO_FAVORITE,
+    type: REMOVE_GAME_FROM_FAVORITE,
     payload: game
 })

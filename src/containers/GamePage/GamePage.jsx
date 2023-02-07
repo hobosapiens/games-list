@@ -10,7 +10,7 @@ import styles from './GamePage.module.css';
 const GamePage = () => {
     const {namn: name, genre} = useParams();
     const [game, setGame] = useState(null);
-    const storedGames = useSelector(state => state.gamesReducer.items);
+    const storedGames = useSelector(state => state.gamesReducer.games);
 
     useEffect(() => {
         if(storedGames.length) {

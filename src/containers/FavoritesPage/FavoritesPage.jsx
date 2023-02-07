@@ -8,7 +8,7 @@ import styles from './FavoritesPage.module.css';
 
 const FavoritesPage = () => {
     const favoriteGames = useSelector(state => state.gamesReducer.favorites);
-    const storedGames = useSelector(state => state.gamesReducer.items);
+    const storedGames = useSelector(state => state.gamesReducer.games);
     const [games, setGames] = useState(null);
 
     useEffect(() => {

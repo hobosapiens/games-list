@@ -1,4 +1,8 @@
-import { ADD_GAME_TO_FAVORITE, REMOVE_GAME_TO_FAVORITE, SET_GAMES, SET_ERROR } from '@store/constants/actionTypes';
+import { 
+    ADD_GAME_TO_FAVORITE, 
+    REMOVE_GAME_FROM_FAVORITE, 
+    SET_GAMES, SET_ERROR 
+} from '@store/constants/actionTypes';
 import { setGames } from '@store/actions';
 import { getApiGames } from '@utils/network';
 import { GAME_SERVICE } from '@constants/api';
@@ -7,7 +11,7 @@ import { getLocalStorage } from '@utils/localStorage';
 
 const initialState = {
     favorites: getLocalStorage('favoriteGames'),
-    items: [],
+    games: [],
     error: false
 };
 
@@ -16,7 +20,7 @@ const gamesReducer = (state = initialState, action) => {
         case SET_GAMES:
             return {
                 ...state,
-                items: action.payload
+                games: action.payload
             }
         case SET_ERROR:
             return {
@@ -28,7 +32,7 @@ const gamesReducer = (state = initialState, action) => {
                 ...state,
                 favorites: [...state.favorites, action.payload]
             }
-        case REMOVE_GAME_TO_FAVORITE:
+        case REMOVE_GAME_FROM_FAVORITE:
             return {
                 ...state,
                 favorites: state.favorites.filter(item => item !== action.payload),
