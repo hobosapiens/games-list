@@ -10,7 +10,7 @@ import styles from './UiToggleFavorite.module.css';
 const UiToggleFavorite = ({ game }) => {
     const [isInFavorites, setIsInFavorites] = useState(false)
     const dispatch = useDispatch();
-    const favoriteGames = useSelector(state => state.favoriteReducer.favoriteGames);
+    const favoriteGames = useSelector(state => state.favoriteReducer.items);
 
     useEffect(() => {
         setIsInFavorites(favoriteGames.includes(game));

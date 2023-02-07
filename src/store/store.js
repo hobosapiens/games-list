@@ -1,9 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit'
-import rootReducer from './reducers'
+import { applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 
-const store = configureStore({ 
+import rootReducer from './reducers'
+import { setLocalStorage } from '@utils/localStorage';
+
+const store = configureStore({
     reducer: rootReducer,
-    devTools: process.env.NODE_ENV !== 'production',
- })
+    devtool: composeWithDevTools(applyMiddleware(thunk))
+})
+
+store.subscribe(() => {
+    setLocalStorage('favoriteGames', store.getState().favoriteReducer.items)
+})
 
  export default store;
