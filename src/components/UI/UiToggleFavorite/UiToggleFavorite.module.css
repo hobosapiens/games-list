@@ -1,0 +1,8 @@
+.toggler {
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.toggler:hover {
+    opacity: .8;
+}

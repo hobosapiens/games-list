@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { LoremIpsum } from 'react-lorem-ipsum';
 
 import UiLoader from '@components/UI/UiLoader';
 
@@ -27,16 +28,42 @@ const GamePage = () => {
             {!game
                 ? <UiLoader />
                 : (
-                    <>
-                        <img src={
-                            `http://www.royalgames.com/images/games/${game.short}/tournamentPage/${game.short}_764x260.jpg`
-                        } alt="screenShot" />
-                        <div>{game.name}</div>
-                        <div>{game.genre}</div>
-                        <img src={
-                            `http://www.royalgames.com/images/games/${game.short}/dumps/screen_${game.short}.gif`
-                        } alt="bigImage" />
-                    </>
+                    <div className={styles.game}>
+                        <div className={styles.game__image}>
+                            <img 
+                                src={`http://www.royalgames.com/images/games/${game.short}/tournamentPage/${game.short}_764x260.jpg`} 
+                                alt="bigImage" 
+                            />
+                        </div>
+
+                        <div className={styles.game__main}>
+                            <div className={styles.game__title}>
+                                <div className={styles.game__name}>{game.name}</div>
+                                <div className={styles.game__genre}>{game.genre}</div>
+                            </div>
+                            <div className={styles.game__controls}>
+                                <div className={styles.game__favorite}>game__favorite</div>
+                                <div className={styles.game__play}>game__play</div>
+                            </div>
+                        </div>
+
+                        <div className={styles.game__description}>
+                            <div className={styles.game__text_top}>
+                                <LoremIpsum avgWordsPerSentence={4} startWithLoremIpsum={false} />
+                            </div>
+                            <div className={styles.game__gameplay}>
+                                <img 
+                                    className={styles.game__screenshot}
+                                    src={`http://www.royalgames.com/images/games/${game.short}/dumps/screen_${game.short}.gif`} 
+                                    alt="screenShot"
+                                />
+                                <div className={styles.game__text_bottom}>
+                                    <LoremIpsum p={1} startWithLoremIpsum={false} />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
             )}
         </>
     )

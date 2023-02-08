@@ -33,8 +33,11 @@ const UiToggleFavorite = ({ game }) => {
     }
     return (
         <>
-            <div onClick={() => toggleFavorite(game)}>
-                <IconStar color={isInFavorites ? 'yellow' : 'gray'} />
+            <div onClick={() => toggleFavorite(game)} className={styles.toggler}>
+                <IconStar 
+                    fill={isInFavorites ? '#FFCD4D' : '#F5F5F5'} 
+                    stroke={isInFavorites ? '#D2691E' : '#808080'} 
+                />
             </div>
         </>
     )

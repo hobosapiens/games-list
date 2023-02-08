@@ -19,15 +19,17 @@ const App = ({setError}) => {
   return (
     <>
       <Header />
-      <Routes>
-          {routesConfig.map((route, index) => (
-          <Route
-              key={index}
-              path={route.path}
-              element={route.element}
-          />
-          ))}
-      </Routes>
+      <div className="content">
+        <Routes>
+            {routesConfig.map((route, index) => (
+            <Route
+                key={index}
+                path={route.path}
+                element={route.element}
+            />
+            ))}
+        </Routes>
+      </div>
     </>
   )
 }
