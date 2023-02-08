@@ -16,10 +16,15 @@
 }
 
 .game__name {
-    color: var(--color-blue);
+    color: var(--color-dark-blue);
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 5px;
+}
+
+.game__genre {
+    color: var(--color-blue);
+    text-decoration: none;
 }
 
 .game__gameplay {
@@ -41,4 +46,20 @@
 
 .game__text_bottom p {
     margin-top: 0;
+}
+
+.game__favorite {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-blue);
+    padding: 11px;
+    border-radius: 26px;
+}
+
+.game__favorite span {
+    display: inline-block;
+    color: var(--color-white);
+    font-size: 20px;
+    width: 175px;
+    margin-left: 20px;
 }

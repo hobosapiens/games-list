@@ -4,8 +4,9 @@ VARIABLES
 :root {
   --color-white: #fff;
   --color-black: #000;
-  --color-blue: #0B7AB8;
   --color-light-blue: #D8F1FF;
+  --color-blue: #9AD1F0;
+  --color-dark-blue: #0B7AB8;
 
   --font-family-main: 'Josefin Sans', sans-serif;
   --content-width: 764px;

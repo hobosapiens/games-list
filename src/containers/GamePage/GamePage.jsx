@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { LoremIpsum } from 'react-lorem-ipsum';
 
 import UiLoader from '@components/UI/UiLoader';
+import UiButtonBig from '@components/UI/UiButtonBig';
+import UiToggleFavorite from '@components/UI/UiToggleFavorite';
 
 import styles from './GamePage.module.css';
 
@@ -39,17 +41,22 @@ const GamePage = () => {
                         <div className={styles.game__main}>
                             <div className={styles.game__title}>
                                 <div className={styles.game__name}>{game.name}</div>
-                                <div className={styles.game__genre}>{game.genre}</div>
+                                <Link className={ styles.game__genre } to={`/spel/${game.genre}`}>#{game.genre}</Link>
                             </div>
                             <div className={styles.game__controls}>
-                                <div className={styles.game__favorite}>game__favorite</div>
-                                <div className={styles.game__play}>game__play</div>
+                                <div className={styles.game__favorite}>
+                                    <UiToggleFavorite game={game.short} />
+                                    <span>Added to Favourite</span>
+                                </div>
+                                <div className={styles.game__play}>
+                                    <UiButtonBig text={'Play!'} />
+                                </div>
                             </div>
                         </div>
 
                         <div className={styles.game__description}>
                             <div className={styles.game__text_top}>
-                                <LoremIpsum avgWordsPerSentence={4} startWithLoremIpsum={false} />
+                                <LoremIpsum avgWordsPerSentence={4} />
                             </div>
                             <div className={styles.game__gameplay}>
                                 <img 
@@ -58,7 +65,7 @@ const GamePage = () => {
                                     alt="screenShot"
                                 />
                                 <div className={styles.game__text_bottom}>
-                                    <LoremIpsum p={1} startWithLoremIpsum={false} />
+                                    <LoremIpsum p={1} />
                                 </div>
                             </div>
                         </div>
