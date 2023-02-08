@@ -1,0 +1,26 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-blue);
+    height: 72px;
+    padding: 11px 42px;
+    border-radius: 26px;
+    cursor: pointer;
+    border: none;
+
+    &:disabled {
+        background-color: var(--color-silver);
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+
+    span {
+        display: inline-block;
+        color: var(--color-white);
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 25px;
+    }
+}

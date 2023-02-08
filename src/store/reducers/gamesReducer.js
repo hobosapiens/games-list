@@ -5,7 +5,7 @@ import {
 } from '@store/constants/actionTypes';
 import { setGames } from '@store/actions';
 import { getApiGames } from '@utils/network';
-import { GAME_SERVICE } from '@constants/api';
+import { GAME_SERVICE } from '@constants';
 import { setError } from '../actions';
 import { getLocalStorage } from '@utils/localStorage';
 

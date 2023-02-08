@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux"
 import { loadGames } from '@store/reducers/gamesReducer';
 import { withError } from '@hoc/withError';
 import { useSelector } from 'react-redux';
+import FilterSearch from '../../components/FilterSearch';
 
 const App = ({setError}) => {
   const isError = useSelector(state => state.gamesReducer.error);
@@ -19,6 +20,7 @@ const App = ({setError}) => {
   return (
     <>
       <Header />
+      <FilterSearch />
       <div className="content">
         <Routes>
             {routesConfig.map((route, index) => (

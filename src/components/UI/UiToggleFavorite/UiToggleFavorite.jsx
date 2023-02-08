@@ -7,7 +7,7 @@ import IconStar from '@components/Icons/Star';
 
 import styles from './UiToggleFavorite.module.scss';
 
-const UiToggleFavorite = ({ game }) => {
+const UiToggleFavorite = ({ type = 'icon', game }) => {
     const [isInFavorites, setIsInFavorites] = useState(false)
     const dispatch = useDispatch();
     const favoriteGames = useSelector(state => state.gamesReducer.favorites);
@@ -32,18 +32,23 @@ const UiToggleFavorite = ({ game }) => {
         }
     }
     return (
-        <>
-            <div onClick={() => toggleFavorite(game)} className={styles.toggler}>
-                <IconStar 
-                    fill={isInFavorites ? '#FFCD4D' : '#F5F5F5'} 
-                    stroke={isInFavorites ? '#D2691E' : '#808080'} 
-                />
-            </div>
-        </>
+        <div 
+            onClick={() => toggleFavorite(game)} 
+            className={type === 'icon' ? styles.toggler : styles.button}
+        >
+            <IconStar 
+                fill={isInFavorites ? '#FFCD4D' : '#F5F5F5'} 
+                stroke={isInFavorites ? '#D2691E' : '#808080'} 
+            />
+            {type === 'button' && (
+                <span>{isInFavorites ? 'Added to favorites' : 'Not yet in favorites'}</span>
+            )}
+        </div>
     )
 }
 
 UiToggleFavorite.propTypes = {
+    type: PropTypes.string,
     game: PropTypes.string
 }
 

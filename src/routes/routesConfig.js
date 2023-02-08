@@ -26,6 +26,10 @@ const routesConfig = [
         element: <FavoritesPage />
     },
     {
+        path: '/favoriter/:genre',
+        element: <FavoritesPage />
+    },
+    {
         path: '/hittades-inte',
         element: <NotFoundPage />
     },

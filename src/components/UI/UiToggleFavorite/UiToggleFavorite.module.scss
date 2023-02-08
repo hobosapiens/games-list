@@ -1,8 +1,30 @@
 .toggler {
     display: inline-flex;
     cursor: pointer;
+    &:hover {
+        opacity: .8;
+    }
 }
 
-.toggler:hover {
-    opacity: .8;
+.button {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--color-blue);
+    padding: 11px 14px;
+    border-radius: 26px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    span {
+        display: inline-block;
+        color: var(--color-white);
+        font-size: 20px;
+        line-height: 25px;
+        width: 100px;
+        margin-left: 20px;
+    }
 }

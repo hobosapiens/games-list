@@ -1,0 +1,45 @@
+.header {
+    padding: 18px;
+    background-color: var(--color-light-blue);
+
+    &__container {
+        width: var(--content-width);
+        margin: auto;
+        padding: 0;
+    }
+}
+
+.navigation {
+    display: flex;
+    padding: 0;
+    list-style: none;
+
+    &__item {
+        display: inline-flex;
+
+        a {
+            background-color: var(--color-white);
+            border-radius: 16px;
+            margin-right: 20px;
+            padding: 10px 16px 5px;
+            text-decoration: none;
+            font-size: 18px;
+            color: var(--color-dark-blue);
+            border: 2px solid var(--color-light-blue);
+
+            &:hover {
+                border-color: var(--color-blue);
+            }
+        }
+
+        :global(a.active) {
+            background-color: var(--color-yellow);
+            color: var(--color-black);
+            border-color: var(--color-black);
+
+            &:hover {
+                border-color: var(--color-orange);
+            }
+        }
+    }
+}

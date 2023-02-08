@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 
 import styles from './UiButtonBig.module.scss';
 
-const UiButtonBig = ({text, onClick, disabled}) => {
+const UiButtonBig = ({text, onClick, disabled = false}) => {
     return (
-        <button>
-            {text}
+        <button className={styles.button} onClick={onClick} disabled={disabled}>
+            <span>{text}</span>
         </button>
     )
 }

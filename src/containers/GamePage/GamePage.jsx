@@ -45,11 +45,14 @@ const GamePage = () => {
                             </div>
                             <div className={styles.game__controls}>
                                 <div className={styles.game__favorite}>
-                                    <UiToggleFavorite game={game.short} />
-                                    <span>Added to Favourite</span>
+                                    <UiToggleFavorite type={'button'} game={game.short} />
+                                    
                                 </div>
                                 <div className={styles.game__play}>
-                                    <UiButtonBig text={'Play!'} />
+                                    <UiButtonBig 
+                                        text={'Play!'} 
+                                        onClick={() => {alert(`Starting ${game.name}, have fun!`)}} 
+                                    />
                                 </div>
                             </div>
                         </div>

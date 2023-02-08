@@ -4,9 +4,13 @@ VARIABLES
 :root {
   --color-white: #fff;
   --color-black: #000;
+  --color-light-gray: #F5F5F5;
+  --color-silver: #C0C0C0;
   --color-light-blue: #D8F1FF;
   --color-blue: #9AD1F0;
   --color-dark-blue: #0B7AB8;
+  --color-yellow: #FFCD4D;
+  --color-orange: #D2691E;
 
   --font-family-main: 'Josefin Sans', sans-serif;
   --content-width: 764px;
@@ -18,6 +22,7 @@ GENERAL
 *, *:after, *:before {
   box-sizing: border-box;
 }
+
 body {
   min-height: 100vh;
   margin: 0;
@@ -29,12 +34,14 @@ body {
   background-attachment: fixed;
   font-family: var(--font-family-main);
 }
+
 .content {
   display: flex;
   flex-wrap: wrap;
   width: var(--content-width);
   margin: 0 auto 80px auto;
 }
+
 img {
   display: block;
 }
