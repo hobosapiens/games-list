@@ -8,7 +8,7 @@ import UiLoader from '@components/UI/UiLoader';
 import UiButtonBig from '@components/UI/UiButtonBig';
 import UiToggleFavorite from '@components/UI/UiToggleFavorite';
 
-import styles from './GamePage.module.css';
+import styles from './GamePage.module.scss';
 
 const GamePage = () => {
     const {namn: name, genre} = useParams();

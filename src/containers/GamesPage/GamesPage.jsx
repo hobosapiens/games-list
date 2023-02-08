@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import GamesList from '@components/GamesPage/GamesList';
 import UiLoader from '@components/UI/UiLoader';
 
-import styles from './GamesPage.module.css';
+import styles from './GamesPage.module.scss';
 
 const GamesPage = () => {
     const { genre } = useParams();

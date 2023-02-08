@@ -1,6 +1,6 @@
 import loaderImg from './img/spinner.gif';
 
-import styles from './UiLoader.module.css';
+import styles from './UiLoader.module.scss';
 
 const UiLoader = () => {
     return (

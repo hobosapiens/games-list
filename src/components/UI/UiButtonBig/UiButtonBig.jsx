@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import styles from './UiButtonBig.module.css';
+import styles from './UiButtonBig.module.scss';
 
 const UiButtonBig = ({text, onClick, disabled}) => {
     return (

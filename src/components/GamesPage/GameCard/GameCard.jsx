@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import UiToggleFavorite from '@components/UI/UiToggleFavorite'
 
-import styles from './GameCard.module.css';
+import styles from './GameCard.module.scss';
 
 const GameCard = ({ game }) => {
     return (

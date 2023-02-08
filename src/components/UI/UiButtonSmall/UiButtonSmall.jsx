@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import styles from './UiButton.module.css';
+import styles from './UiButton.module.scss';
 
 const UiButtonSmall = ({ text, onClick, disabled }) => (
     <button

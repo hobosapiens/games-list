@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import GameCard from '@components/GamesPage/GameCard';
 
-import styles from './GamesList.module.css';
+import styles from './GamesList.module.scss';
 
 const GamesList = ({ games }) => {
     return (

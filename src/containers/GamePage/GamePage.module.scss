@@ -1,0 +1,67 @@
+.game {
+    &__main {
+        display: flex;
+        margin: 30px 0;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+    }
+
+    &__controls {
+        display: flex;
+        width: 50%;
+    }
+
+    &__name {
+        color: var(--color-dark-blue);
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    &__genre {
+        color: var(--color-blue);
+        text-decoration: none;
+    }
+
+    &__gameplay {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__text {
+        &_top {
+            font-size: 18px;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+        &_bottom {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-left: 25px;
+            p {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__favorite {
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--color-blue);
+        padding: 11px;
+        border-radius: 26px;
+
+        span {
+            display: inline-block;
+            color: var(--color-white);
+            font-size: 20px;
+            width: 175px;
+            margin-left: 20px;
+        }
+    }
+}

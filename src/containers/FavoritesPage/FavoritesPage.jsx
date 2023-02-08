@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import GamesList from '@components/GamesPage/GamesList';
 
-import styles from './FavoritesPage.module.css';
+import styles from './FavoritesPage.module.scss';
 
 const FavoritesPage = () => {
     const favoriteGames = useSelector(state => state.gamesReducer.favorites);

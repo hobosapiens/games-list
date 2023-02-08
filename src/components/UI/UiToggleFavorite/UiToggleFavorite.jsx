@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { addGameToFavorite, removeGameFromFavorite } from '@store/actions';
 import IconStar from '@components/Icons/Star';
 
-import styles from './UiToggleFavorite.module.css';
+import styles from './UiToggleFavorite.module.scss';
 
 const UiToggleFavorite = ({ game }) => {
     const [isInFavorites, setIsInFavorites] = useState(false)
