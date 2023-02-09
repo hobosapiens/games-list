@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import routesConfig from '@routes/routesConfig';
-import Header from '../../components/Header/Header';
 import { useDispatch } from "react-redux"
-import { loadGames } from '@store/reducers/gamesReducer';
-import { withError } from '@hoc/withError';
 import { useSelector } from 'react-redux';
-import FilterSearch from '../../components/FilterSearch';
+
+import routesConfig from '@routes/routesConfig';
+import { withError } from '@hoc/withError';
+import { loadGames } from '@store/reducers/gamesReducer';
+import GenresFilter from '@components/Header/GenresFilter';
+import Navigation from '@components/Header/Navigation';
+import Search from '@components/Header/Search';
+
+import styles from './App.module.scss';
 
 const App = ({setError}) => {
   const isError = useSelector(state => state.gamesReducer.error);
@@ -20,19 +24,36 @@ const App = ({setError}) => {
   return (
     <>
       <Header />
-      <FilterSearch />
-      <div className="content">
-        <Routes>
-            {routesConfig.map((route, index) => (
-            <Route
-                key={index}
-                path={route.path}
-                element={route.element}
-            />
-            ))}
-        </Routes>
-      </div>
+      <Content />
     </>
+  )
+}
+
+const Header = () => {
+  return (
+    <div className={styles.header}>
+        <div className={styles.header__container}>
+            <Navigation />
+            <Search />
+            <GenresFilter />
+        </div>
+    </div>
+  )
+}
+
+const Content = () => {
+  return (
+    <div className="content">
+      <Routes>
+          {routesConfig.map((route, index) => (
+          <Route
+              key={index}
+              path={route.path}
+              element={route.element}
+          />
+          ))}
+      </Routes>
+    </div>
   )
 }
 

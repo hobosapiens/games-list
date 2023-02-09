@@ -51,7 +51,7 @@ const GamePage = () => {
                                 <div className={styles.game__play}>
                                     <UiButtonBig 
                                         text={'Play!'} 
-                                        onClick={() => {alert(`Starting '${game.name}', have fun!`)}} 
+                                        onClick={() => {alert(`Starting '${game.name}'. Have fun!`)}} 
                                     />
                                 </div>
                             </div>

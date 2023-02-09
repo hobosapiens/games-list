@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import GameCard from '@components/GamesPage/GameCard';
 import { useSearch } from '@context/SearchProvider';
-import UiLoader from '@components/UI/UiLoader';
 
 import styles from './GamesList.module.scss';
 

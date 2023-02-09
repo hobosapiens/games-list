@@ -1,5 +1,7 @@
 .error {
-    display: inline-block;
+    display: flex;
+    margin: auto;
     padding: 20px;
     border: 1px solid red;
+    text-align: center;
 }
