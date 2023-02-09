@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { NavLink, useLocation } from 'react-router-dom';
-
-import { GAME_GENRES } from '@constants';
+import { useSelector } from 'react-redux';
 
 import styles from './FilterSearch.module.scss';
 
 const FilterSearch = () => {
+    const genres = useSelector(state => state.gamesReducer.genres);
     const { pathname } = useLocation();
     const section =  pathname !== '/' ? `${pathname.match(/^\/[a-z]+/)[0]}/` : '/spel/';
     
@@ -13,7 +13,7 @@ const FilterSearch = () => {
         <div className={styles.wrapper}>
             <div className={styles.filter}>
                 <ul className={styles.filter__list}>
-                    {GAME_GENRES.map(genre => (
+                    {genres.map(genre => (
                         <li className={styles.filter__item} key={genre}>
                             <NavLink to={section + genre}>{genre}</NavLink>
                         </li>

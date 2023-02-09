@@ -3,6 +3,10 @@
     background-color: var(--color-light-blue);
 
     &__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
         width: var(--content-width);
         margin: auto;
         padding: 0;
