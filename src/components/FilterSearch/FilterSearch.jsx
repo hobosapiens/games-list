@@ -7,7 +7,8 @@ import styles from './FilterSearch.module.scss';
 
 const FilterSearch = () => {
     const { pathname } = useLocation();
-    const section = `${pathname.match(/^\/[a-z]+/)[0]}/`;
+    const section =  pathname !== '/' ? `${pathname.match(/^\/[a-z]+/)[0]}/` : '/spel/';
+    
     return (
         <div className={styles.wrapper}>
             <div className={styles.filter}>

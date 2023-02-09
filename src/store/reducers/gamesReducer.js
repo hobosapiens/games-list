@@ -46,7 +46,7 @@ const reformatedGames = (games, favorites) => {
     return games.map((game) => ({
         'name': game.name,
         'short': game.short,
-        'url': game.url,
+        'url': game.url.split('/?language=sv')[0],
         'genre': game.url.match(/\/spel\/(\w+)\//)[1],
         'inFavorites': favorites.includes(game.short)
     }))

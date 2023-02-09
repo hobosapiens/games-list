@@ -18,7 +18,7 @@ const GamePage = () => {
     useEffect(() => {
         if(storedGames.length) {
             const currentGame = storedGames.find(object => {
-                return object.url.includes(`/${genre}/${name}/`);
+                return object.url.includes(`/${genre}/${name}`);
             });
             
             setGame(currentGame)
@@ -51,7 +51,7 @@ const GamePage = () => {
                                 <div className={styles.game__play}>
                                     <UiButtonBig 
                                         text={'Play!'} 
-                                        onClick={() => {alert(`Starting ${game.name}, have fun!`)}} 
+                                        onClick={() => {alert(`Starting '${game.name}', have fun!`)}} 
                                     />
                                 </div>
                             </div>
