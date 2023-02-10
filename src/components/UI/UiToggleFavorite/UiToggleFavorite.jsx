@@ -37,7 +37,7 @@ const UiToggleFavorite = ({ type = 'icon', game }) => {
             className={type === 'icon' ? styles.toggler : styles.button}
         >
             <IconStar 
-                fill={isInFavorites ? '#FFCD4D' : '#F5F5F5'} 
+                color={isInFavorites ? '#FFCD4D' : '#F5F5F5'} 
                 stroke={isInFavorites ? '#D2691E' : '#808080'} 
             />
             {type === 'button' && (

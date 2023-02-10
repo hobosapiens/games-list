@@ -12,17 +12,17 @@ const GenresFilter = () => {
   const section =  pathname !== '/' ? `${pathname.match(/^\/[a-z]+/)[0]}/` : '/spel/';
 
     return (
-        <div className="dropdown">
+      <div className="dropdown">
         <button
-          className="dropdown-toggle"
+          className="dropdown__toggle"
           onClick={() => setOpen(!open)}
         >
-          Dropdown
+          Spelgenrer
         </button>
         {open && (
-          <ul className="dropdown-menu">
+          <ul className="dropdown__menu">
             {genres.map(genre => (
-                <li className={styles.filter__item} key={genre}>
+                <li className={styles.dropdown__item} key={genre}>
                     <NavLink to={section + genre}>{genre}</NavLink>
                 </li>
             ))}
