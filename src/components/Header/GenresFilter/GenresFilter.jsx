@@ -1,39 +1,74 @@
-import { useState } from "react";
-import PropTypes from 'prop-types';
+import { useState, useRef, useEffect } from "react";
 import { useSelector } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
+import cn from 'classnames';
+
+import IconArrow from '@components/Icons/IconArrow';
 
 import styles from './GenresFilter.module.scss';
 
 const GenresFilter = () => {
   const { pathname } = useLocation();
+  const [currentPageParams, setCurrentPageParams] = useState(null);
   const [open, setOpen] = useState(false);
-  const genres = useSelector(state => state.gamesReducer.genres);
-  const section =  pathname !== '/' ? `${pathname.match(/^\/[a-z]+/)[0]}/` : '/spel/';
+  const dropdown = useRef(null);
+  const allGenres = useSelector(state => state.gamesReducer.genres);
 
-    return (
-      <div className="dropdown">
-        <button
-          className="dropdown__toggle"
-          onClick={() => setOpen(!open)}
-        >
-          Spelgenrer
-        </button>
-        {open && (
-          <ul className="dropdown__menu">
-            {genres.map(genre => (
-                <li className={styles.dropdown__item} key={genre}>
-                    <NavLink to={section + genre}>{genre}</NavLink>
-                </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    )
-}
+  useEffect(() => {
+    setCurrentPageParams(handleUrl(pathname))
 
-GenresFilter.propTypes = {
-    value: PropTypes.string
+    const handleClickOutside = (event) => {
+      if (dropdown.current && !dropdown.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [dropdown, pathname]);
+
+  const handleUrl = url => {
+    if(!url) return;
+
+    let [section, genre] = url.slice(1).split('/');
+
+    return ({
+      section: section || '/spel/',
+      genre: genre || null
+    })
+  }
+
+  return (
+    <div className={styles.dropdown} ref={dropdown}>
+      <button
+        className={styles.dropdown__toggler}
+        onClick={() => setOpen(!open)}
+      >
+        <span>Spelgenrer</span>
+        <span className={cn(styles.dropdown__icon, open && styles.active)}>
+          <IconArrow />
+        </span>
+      </button>
+      <ul className={cn(styles.dropdown__menu, open && styles.show)}>
+        {allGenres?.map(genre => (
+            <li 
+              className={cn(
+                styles.dropdown__item, 
+                currentPageParams?.genre === genre && styles.active
+              )}
+              key={genre}
+            >
+              <NavLink 
+                to={`${currentPageParams?.section}/${genre}`} 
+                className={styles.dropdown__link}
+              >
+                {genre}
+              </NavLink>
+            </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
 export default GenresFilter;
