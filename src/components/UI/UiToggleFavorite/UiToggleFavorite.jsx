@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { addGameToFavorite, removeGameFromFavorite } from '@store/actions';
-import IconStar from '@components/Icons/Star';
+import IconStar from '@components/Icons/IconStar';
 
 import styles from './UiToggleFavorite.module.scss';
 

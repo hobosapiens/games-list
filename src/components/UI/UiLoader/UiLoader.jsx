@@ -1,12 +1,12 @@
-import loaderImg from './img/spinner.gif';
+import IconSpinner from '@components/Icons/IconSpinner';
 
 import styles from './UiLoader.module.scss';
 
 const UiLoader = () => {
     return (
-        <>
-            <img src={loaderImg} alt="loader" />
-        </>
+        <div className={styles.loader}>
+            <IconSpinner />
+        </div>
     )
 }
 

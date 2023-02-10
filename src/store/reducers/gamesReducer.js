@@ -12,8 +12,8 @@ import { getLocalStorage } from '@utils/localStorage';
 
 const initialState = {
     favorites: getLocalStorage('favoriteGames'),
-    games: [],
-    genres: [],
+    games: null,
+    genres: null,
     error: false
 };
 
@@ -42,7 +42,7 @@ const gamesReducer = (state = initialState, action) => {
         case SET_GENRES:
             return {
                 ...state,
-                genres: [...state.genres, ...action.payload],
+                genres: action.payload,
             }
         default:
             return state;

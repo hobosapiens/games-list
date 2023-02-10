@@ -1,0 +1,26 @@
+.search {
+    position: relative;
+
+    &__input {
+        border: 2px solid var(--color-light-blue);
+        background-color: var(--color-white);
+        border-radius: 16px;
+        padding: 8px 40px 7px 16px;
+
+        &:focus, &:focus-visible {
+            outline: none;
+            border-color: var(--color-dark-blue);
+        }
+    }
+
+    &__clear {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 99;
+        cursor: pointer;
+    }
+}
