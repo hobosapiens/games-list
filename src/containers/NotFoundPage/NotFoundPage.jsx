@@ -7,7 +7,7 @@ const NotFoundPage = () => {
 
     return (
         <>
-            <div>No match for <u>{location.pathname}</u></div>
+            <div>Ingen match för <u>{location.pathname}</u></div>
         </>
     )
 }
