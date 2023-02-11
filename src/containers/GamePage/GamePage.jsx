@@ -16,7 +16,7 @@ const GamePage = () => {
     const storedGames = useSelector(state => state.gamesReducer.games);
 
     useEffect(() => {
-        if(storedGames.length) {
+        if(storedGames?.length) {
             const currentGame = storedGames.find(object => {
                 return object.url.includes(`/${genre}/${name}`);
             });

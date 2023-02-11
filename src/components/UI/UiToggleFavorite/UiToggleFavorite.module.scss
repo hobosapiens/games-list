@@ -1,8 +1,10 @@
 .toggler {
     display: inline-flex;
     cursor: pointer;
+    transition: transform 250ms;
+    
     &:hover {
-        opacity: .8;
+        transform: scale(1.1);
     }
 }
 
@@ -16,7 +18,13 @@
     cursor: pointer;
 
     &:hover {
-        opacity: .8;
+        svg {
+            transform: scale(1.1);
+        }
+    }
+
+    svg {
+        transition: transform 250ms;
     }
 
     span {

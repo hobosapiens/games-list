@@ -2,12 +2,22 @@
     position: relative;
     width: 170px;
     background-color: var(--color-white);
-    box-shadow: 0 0 6px 0 rgb(0 0 0 / 30%);
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
+    transition: transform 250ms;
 }
 
 .card:hover {
     background-color: var(--color-white);
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 60%);
+    transform: translateY(-5px);
+
+    .card__img {
+        filter: blur(2px);
+    }
+
+    .card__info {
+        transform: scale(1.02);
+        border: 1px solid var(--color-blue);
+    }
 }
 
 .card__info {
@@ -21,6 +31,7 @@
     right: 0;
     padding: 14px 10px;
     background-color: rgba(255,255,255, .8);
+    transition: transform 250ms;
 }
 
 .card:hover .card__info {
@@ -29,20 +40,21 @@
 
 .card__name {
     display: block;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    color: var(--color-black);
+    text-decoration: none;
+    color: var(--color-dark-blue);
 }
 
 .card__genre {
     display: block;
     margin-bottom: 8px;
     text-decoration: none;
-    color: var(--color-black);
+    color: var(--color-dark-blue);
 }
 
 .card__favorite {
     position: absolute;
-    top: -15px;
-    right: 0;
+    top: -17px;
+    right: -11px;
 }

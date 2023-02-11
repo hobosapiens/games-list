@@ -7,13 +7,14 @@
     border-radius: 26px;
     cursor: pointer;
     border: none;
+    transition: background-color .2s ease;
 
     &:disabled {
         background-color: var(--color-silver);
     }
 
     &:hover {
-        opacity: .8;
+        background-color: var(--color-yellow)
     }
 
     span {
