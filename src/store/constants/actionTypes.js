@@ -2,4 +2,5 @@ export const SET_GAMES = 'SET_GAMES';
 export const ADD_GAME_TO_FAVORITE = 'ADD_GAME_TO_FAVORITE';
 export const REMOVE_GAME_FROM_FAVORITE = 'REMOVE_GAME_FROM_FAVORITE';
 export const SET_GENRES = 'SET_GENRES';
+export const SET_SEARCH = 'SET_SEARCH';
 export const SET_ERROR = 'SET_FETCH_ERROR';

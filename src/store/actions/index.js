@@ -1,7 +1,6 @@
 import { 
-    ADD_GAME_TO_FAVORITE, 
-    REMOVE_GAME_FROM_FAVORITE, 
-    SET_GAMES, SET_GENRES, SET_ERROR 
+    ADD_GAME_TO_FAVORITE, REMOVE_GAME_FROM_FAVORITE, 
+    SET_GAMES, SET_GENRES, SET_SEARCH, SET_ERROR 
 } from '@store/constants/actionTypes';
 
 export const setGames = games => ({
@@ -22,6 +21,11 @@ export const removeGameFromFavorite = game => ({
 export const setGenres = genres => ({
     type: SET_GENRES,
     payload: genres
+})
+
+export const setSearch = search => ({
+    type: SET_SEARCH,
+    payload: search
 })
 
 export const setError = error => ({

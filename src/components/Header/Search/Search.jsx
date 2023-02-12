@@ -1,10 +1,16 @@
-import { useSearch } from '@context/SearchProvider';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSearch } from '@store/actions';
 import IconCross from '@components/Icons/IconCross'
 
 import styles from './Search.module.scss';
 
 const Search = () => {
-    const isSearch = useSearch();
+    const searchValue = useSelector(state => state.gamesReducer.search);
+    const dispatch = useDispatch();
+
+    const handleSearch = value => {
+        dispatch(setSearch(value))
+    }
 
     return (
         <div className={styles.search}>
@@ -12,13 +18,13 @@ const Search = () => {
                 className={styles.search__input}
                 type='text'
                 placeholder="Sök på namn"
-                value={isSearch.searchValue}
-                onChange={(e) => isSearch.handleSearch(e.target.value)}
+                value={searchValue}
+                onChange={(e) => handleSearch(e.target.value)}
             />
-            {isSearch.searchValue && (
+            {searchValue && (
                     <div 
                         className={styles.search__clear}
-                        onClick={() => isSearch.handleSearch('')}
+                        onClick={() => handleSearch('')}
                     >
                         <IconCross />
                     </div>

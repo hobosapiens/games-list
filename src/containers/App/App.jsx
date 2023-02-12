@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch } from "react-redux"
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import routesConfig from '@routes/routesConfig';
 import { withError } from '@hoc/withError';
