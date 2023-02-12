@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import GamesList from '@components/GamesPage/GamesList';
+import GamesList from '@containers/GamesPage/GamesList';
 import UiLoader from '@components/UI/UiLoader';
 
 const filterByGenre = (games, genre) => {

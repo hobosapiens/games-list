@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 
-import GameCard from '@components/GamesPage/GameCard';
+import GameCard from '@containers/GamesPage/GameCard';
 
 import styles from './GamesList.module.scss';
 
