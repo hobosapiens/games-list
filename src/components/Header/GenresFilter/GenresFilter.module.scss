@@ -82,3 +82,21 @@
         }
     }
 }
+
+@media screen and (max-width: 820px) {
+    .dropdown {
+        margin-left: auto;
+        margin-top: 10px;
+    }
+  }
+
+@media screen and (max-width: 590px) {
+    .dropdown {
+        display: flex;
+        margin: 0;
+
+        &__toggler {
+            flex-grow: 1;
+        }
+    }
+  }

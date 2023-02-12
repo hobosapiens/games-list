@@ -8,8 +8,26 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        width: var(--content-width);
+        width: var(--desktop-content-width);
         margin: auto;
         padding: 0;
     }
 }
+
+@media screen and (max-width: 820px) {
+    .header {
+        &__container {
+            width: var(--tablet-content-width);
+        }
+    }
+  }
+
+@media screen and (max-width: 590px) {
+    .header {
+        margin-bottom: 30px;
+
+        &__container {
+            width: var(--mobile-content-width);
+        }
+    }
+  }

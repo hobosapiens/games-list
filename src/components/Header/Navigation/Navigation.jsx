@@ -1,14 +1,19 @@
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import cn from 'classnames';
 
 import styles from './Navigation.module.scss';
 
 const Navigation = () => {
     return (
-        <ul className={styles.navigation}>
-            <li className={styles.navigation__item}><NavLink to="/spel">Alla Spel</NavLink></li>
-            <li className={styles.navigation__item}><NavLink to="/favoriter">Favoriter</NavLink></li>
-        </ul>
+        <div className={styles.navigation}>
+            <div className={cn(styles.navigation__item, styles.all)}>
+                <NavLink to="/spel">Alla Spel</NavLink>
+            </div>
+            <div className={cn(styles.navigation__item, styles.favorite)}>
+                <NavLink to="/favoriter">Favoriter</NavLink>
+            </div>
+        </div>
     )
 }
 

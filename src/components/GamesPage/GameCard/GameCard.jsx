@@ -8,11 +8,13 @@ import styles from './GameCard.module.scss';
 const GameCard = ({ game }) => {
     return (
         <li className={ styles.card }>
-            <img 
-                className={ styles.card__img } 
-                src={`http://www.royalgames.com/images/games/${game.short}/${game.short}_170x80.gif`} 
-                alt={game.name} 
-            />
+            <Link to={game.url}>
+                <img 
+                    className={ styles.card__img } 
+                    src={`http://www.royalgames.com/images/games/${game.short}/${game.short}_170x80.gif`} 
+                    alt={game.name} 
+                />
+            </Link>
             <div className={styles.card__info}>
                 <div className={styles.card__favorite}><UiToggleFavorite game={game.short} /></div>
                 <div className={styles.card__text}>

@@ -13,15 +13,27 @@
         background-color: var(--color-silver);
     }
 
-    &:hover {
-        background-color: var(--color-yellow)
-    }
-
     span {
         display: inline-block;
         color: var(--color-white);
         font-size: 36px;
         font-weight: bold;
         line-height: 25px;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    .button {
+        &:hover {
+            background-color: var(--color-yellow)
+        }
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .button {
+        span {
+            font-size: 24px;
+        }
     }
 }

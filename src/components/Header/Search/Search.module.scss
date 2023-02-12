@@ -29,3 +29,13 @@
         cursor: pointer;
     }
 }
+
+@media screen and (max-width: 590px) {
+    .search {
+        display: flex;
+
+        &__input {
+            width: 200px;
+        }
+    }
+  }

@@ -16,13 +16,15 @@ VARIABLES
   --border-color-transition: border .5s ease;
 
   --font-family-main: 'Josefin Sans', sans-serif;
-  --content-width: 764px;
+  --desktop-content-width: 764px;
+  --tablet-content-width: 550px;
+  --mobile-content-width: 360px;
 }
 
 /***************************************************
 GENERAL
 /***************************************************/
-*, *:after, *:before {
+*, *::after, *::before {
   box-sizing: border-box;
 }
 
@@ -43,10 +45,22 @@ body {
 .content {
   display: flex;
   flex-wrap: wrap;
-  width: var(--content-width);
+  width: var(--desktop-content-width);
   margin: 0 auto 80px auto;
 }
 
 img {
   display: block;
+}
+
+@media screen and (max-width: 820px) {
+  .content {
+    width: var(--tablet-content-width);
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .content {
+    width: var(--mobile-content-width);
+  }
 }

@@ -34,3 +34,29 @@
         }
     }
 }
+
+@media screen and (max-width: 590px) {
+    .navigation {
+        width: 100%;
+        margin-bottom: 16px;
+
+        &__item {
+            display: flex;
+
+            a {
+                flex-grow: 1;
+                margin: 0;
+                border-color: var(--color-dark-blue);
+            }
+
+            &.all {
+                flex-grow: 1;
+                margin-right: 18px;
+            }
+
+            &.favorite {
+                width: 200px;
+            }
+        }
+    }
+  }
