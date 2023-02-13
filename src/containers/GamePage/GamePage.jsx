@@ -6,7 +6,7 @@ import { LoremIpsum } from 'react-lorem-ipsum';
 
 import UiLoader from '@components/UI/UiLoader';
 import UiButton from '@components/UI/UiButton';
-import UiToggleFavorite from '@components/UI/UiToggleFavorite';
+import ToggleFavorite from '@components/ToggleFavorite';
 
 import styles from './GamePage.module.scss';
 
@@ -35,6 +35,7 @@ const GamePage = () => {
 }
 
 const Game = ({ game }) => {
+
     return (
         <div className={styles.game}>
             <div className={styles.game__image}>
@@ -50,7 +51,7 @@ const Game = ({ game }) => {
                 </div>
                 <div className={styles.game__controls}>
                     <div className={styles.game__favorite}>
-                        <UiToggleFavorite type={'button'} game={game.short} />
+                        <ToggleFavorite type={'button'} game={game.short} />
                         
                     </div>
                     <div className={styles.game__play}>

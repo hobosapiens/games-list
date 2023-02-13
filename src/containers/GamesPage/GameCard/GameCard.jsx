@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import UiToggleFavorite from '@components/UI/UiToggleFavorite'
+import ToggleFavorite from '@components/ToggleFavorite'
 
 import styles from './GameCard.module.scss';
 
@@ -16,7 +16,9 @@ const GameCard = ({ game }) => {
                 />
             </Link>
             <div className={styles.card__info}>
-                <div className={styles.card__favorite}><UiToggleFavorite game={game.short} /></div>
+                <div className={styles.card__favorite}>
+                    <ToggleFavorite type="icon" game={game.short} />
+                </div>
                 <div className={styles.card__text}>
                     <Link className={ styles.card__genre } to={`/spel/${game.genre}`}>#{game.genre}</Link>
                     <Link to={game.url} className={ styles.card__name }>{game.name}</Link>

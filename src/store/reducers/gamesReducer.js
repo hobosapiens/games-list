@@ -54,13 +54,12 @@ const gamesReducer = (state = initialState, action) => {
     }
 }
 
-const reformatedGames = (games, favorites) => {
+const reformatedGames = (games) => {
     return games.map((game) => ({
         'name': game.name,
         'short': game.short,
         'url': game.url.split('/?language=sv')[0],
-        'genre': getGenreFromUrl(game.url),
-        'inFavorites': favorites.includes(game.short)
+        'genre': getGenreFromUrl(game.url)
     }))
 }
 

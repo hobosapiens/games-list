@@ -5,32 +5,25 @@ import PropTypes from 'prop-types';
 import { addGameToFavorite, removeGameFromFavorite } from '@store/actions';
 import IconStar from '@components/Icons/IconStar';
 
-import styles from './UiToggleFavorite.module.scss';
+import styles from './ToggleFavorite.module.scss';
 
-const UiToggleFavorite = ({ type = 'icon', game }) => {
-    const [isInFavorites, setIsInFavorites] = useState(false)
+const ToggleFavorite = ({ type = 'icon', game }) => {
     const dispatch = useDispatch();
     const favoriteGames = useSelector(state => state.gamesReducer.favorites);
+    const [isInFavorites, setIsInFavorites] = useState(false)
 
     useEffect(() => {
         setIsInFavorites(favoriteGames.includes(game));
     }, [favoriteGames, game]);
 
-    const set = game => {
-        dispatch(addGameToFavorite(game));
-    }
-
-    const remove = game => {
-        dispatch(removeGameFromFavorite(game));
-    }
-
     const toggleFavorite = game => {
         if(favoriteGames.includes(game)) {
-            remove(game)
+            dispatch(removeGameFromFavorite(game));
         } else {
-            set(game)
+            dispatch(addGameToFavorite(game));
         }
     }
+    
     return (
         <div 
             onClick={() => toggleFavorite(game)} 
@@ -47,9 +40,9 @@ const UiToggleFavorite = ({ type = 'icon', game }) => {
     )
 }
 
-UiToggleFavorite.propTypes = {
+ToggleFavorite.propTypes = {
     type: PropTypes.string,
     game: PropTypes.string
 }
 
-export default UiToggleFavorite;
+export default ToggleFavorite;
