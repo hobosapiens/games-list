@@ -3,7 +3,7 @@ import {
     SET_GAMES, SET_GENRES, SET_SEARCH, SET_ERROR 
 } from '@store/constants/actionTypes';
 import { setGames } from '@store/actions';
-import { getApiGames } from '@utils/network';
+import { getApiGames } from '@api/getApiGames';
 import { GAME_SERVICE } from '@constants';
 import { setGenres } from '../actions';
 import { setError } from '../actions';
@@ -75,10 +75,12 @@ const getGenreFromUrl = url => {
 
 export const loadGames = (state = initialState) => async (dispatch) => {
     const res = await getApiGames(GAME_SERVICE);
+
     if (!res) {
         dispatch(setError(true))
         return;
     }
+
     dispatch(setGames(reformatedGames(res.games, state.favorites)));
     dispatch(setGenres(findGenres(res.games)));
   } 

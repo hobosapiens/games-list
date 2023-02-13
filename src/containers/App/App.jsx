@@ -3,27 +3,29 @@ import { Routes, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import routesConfig from '@routes/routesConfig';
-import { withError } from '@hoc/withError';
 import { loadGames } from '@store/reducers/gamesReducer';
 import GenresFilter from '@components/Header/GenresFilter';
 import Navigation from '@components/Header/Navigation';
 import Search from '@components/Header/Search';
+import ErrorMessage from '@components/ErrorMessage';
 
 import styles from './App.module.scss';
 
-const App = ({setError}) => {
+const App = () => {
   const isError = useSelector(state => state.gamesReducer.error);
   const dispatch = useDispatch();
 
   useEffect(() => {
       dispatch(loadGames());
-      setError(isError);
-  },[dispatch, isError, setError]);
+  },[dispatch]);
 
   return (
     <>
       <Header />
-      <Content />
+      {isError 
+        ? <ErrorMessage />
+        : <Content />
+      }
     </>
   )
 }
@@ -56,4 +58,4 @@ const Content = () => {
   )
 }
 
-export default withError(App);
+export default App;
