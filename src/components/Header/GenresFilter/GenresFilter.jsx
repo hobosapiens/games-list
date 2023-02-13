@@ -7,10 +7,22 @@ import IconArrow from '@components/Icons/IconArrow';
 
 import styles from './GenresFilter.module.scss';
 
+const handleUrl = url => {
+  if(!url) return;
+
+  let [section, genre] = url.slice(1).split('/');
+
+  return ({
+    section: section || '/spel/',
+    genre: genre || null
+  })
+}
+
 const GenresFilter = () => {
-  const { pathname } = useLocation();
-  const [currentPageParams, setCurrentPageParams] = useState(null);
   const [open, setOpen] = useState(false);
+  const [currentPageParams, setCurrentPageParams] = useState(null);
+
+  const { pathname } = useLocation();
   const dropdown = useRef(null);
   const allGenres = useSelector(state => state.gamesReducer.genres);
 
@@ -26,17 +38,6 @@ const GenresFilter = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [dropdown, pathname]);
-
-  const handleUrl = url => {
-    if(!url) return;
-
-    let [section, genre] = url.slice(1).split('/');
-
-    return ({
-      section: section || '/spel/',
-      genre: genre || null
-    })
-  }
 
   return (
     <div className={styles.dropdown} ref={dropdown}>

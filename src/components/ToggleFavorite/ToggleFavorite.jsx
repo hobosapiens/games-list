@@ -9,8 +9,8 @@ import styles from './ToggleFavorite.module.scss';
 
 const ToggleFavorite = ({ type = 'icon', game }) => {
     const dispatch = useDispatch();
-    const favoriteGames = useSelector(state => state.gamesReducer.favorites);
     const [isInFavorites, setIsInFavorites] = useState(false)
+    const favoriteGames = useSelector(state => state.gamesReducer.favorites);
 
     useEffect(() => {
         setIsInFavorites(favoriteGames.includes(game));

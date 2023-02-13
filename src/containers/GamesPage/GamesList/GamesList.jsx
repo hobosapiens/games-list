@@ -30,7 +30,7 @@ const GamesList = ({ games }) => {
                         {searchedGames.map((game, index) => <GameCard game={game} key={index} />)}
                     </ul>
                 )
-                : <div>Inget hittat 😔</div>
+                : <div className={ styles.list__not_found }>Inget hittat 😔</div>
             }
         </>
     )

@@ -3,13 +3,13 @@ export const getApiGames = async (url) => {
         const res = await fetch(url);
 
         if(!res.ok) {
-            console.error('Could not fetch.', res.status);
+            console.error('Kunde inte hämta.', res.status);
             return false;
         }
 
         return await res.json();
     } catch (error) {
-        console.error('Could not fetch.', error.message);
+        console.error('Kunde inte hämta.', error.message);
         return false;
     }
 }

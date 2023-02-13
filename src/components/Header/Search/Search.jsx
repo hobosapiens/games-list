@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setSearch } from '@store/actions';
 import IconCross from '@components/Icons/IconCross'
+import { setSearch } from '@store/actions';
 import useDebouncedDispatch from '@hooks/debouncedDispatch'
 
 import styles from './Search.module.scss';
@@ -10,8 +10,9 @@ import styles from './Search.module.scss';
 const Search = () => {
     const dispatch = useDispatch();
     const searchValue = useSelector(state => state.gamesReducer.search);
-    const debouncedDispatch = useDebouncedDispatch(dispatch, 250);
     const [inputValue, setInputValue] = useState(searchValue);
+    
+    const debouncedDispatch = useDebouncedDispatch(dispatch, 250);
  
     const handleSearch = value => {
         setInputValue(value)

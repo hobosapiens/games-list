@@ -6,9 +6,7 @@ const NotFoundPage = () => {
     let location = useLocation();
 
     return (
-        <>
-            <div>Ingen match för <u>{location.pathname}</u></div>
-        </>
+        <div className={ styles.not_found }>Ingen match för <u>{location.pathname}</u></div>
     )
 }
 

@@ -12,8 +12,8 @@ import ErrorMessage from '@components/ErrorMessage';
 import styles from './App.module.scss';
 
 const App = () => {
-  const isError = useSelector(state => state.gamesReducer.error);
   const dispatch = useDispatch();
+  const isError = useSelector(state => state.gamesReducer.error);
 
   useEffect(() => {
       dispatch(loadGames());

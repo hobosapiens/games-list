@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 
 import GamesList from '@containers/GamesPage/GamesList';
 
+import styles from './FavoritesPage.module.scss';
+
 const filterGames = (games, favorites) => {
     if(!favorites) return [];
     return games.filter((game) => favorites.includes(game.short));
@@ -29,7 +31,7 @@ const FavoritesPage = () => {
         <>
             {sortedFilteredGames?.length 
                 ? <GamesList games={sortedFilteredGames} /> 
-                : <div>No favorites yet</div>
+                : <div className={ styles.no_favorites }>Inga favoriter än.</div>
             }
         </>
     )

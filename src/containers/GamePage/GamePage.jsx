@@ -13,8 +13,8 @@ import styles from './GamePage.module.scss';
 const defineCurrentGame = (games, genre, name) => {
     if(!games) return;
 
-    return games?.find(object => {
-        return object.url.includes(`/${genre}/${name}`);
+    return games?.find(game => {
+        return game.url.includes(`/${genre}/${name}`);
     })
 };
 
@@ -22,7 +22,10 @@ const GamePage = () => {
     const {namn: name, genre} = useParams();
     const storedGames = useSelector(state => state.gamesReducer.games);
 
-    const currentGame = useMemo(() => defineCurrentGame(storedGames, genre, name), [genre, name, storedGames])
+    const currentGame = useMemo(
+        () => defineCurrentGame(storedGames, genre, name), 
+        [genre, name, storedGames]
+    )
 
     return (
         <>
@@ -35,7 +38,6 @@ const GamePage = () => {
 }
 
 const Game = ({ game }) => {
-
     return (
         <div className={styles.game}>
             <div className={styles.game__image}>
