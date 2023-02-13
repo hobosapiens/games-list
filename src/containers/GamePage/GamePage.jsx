@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { LoremIpsum } from 'react-lorem-ipsum';
 
 import UiLoader from '@components/UI/UiLoader';
-import UiButtonBig from '@components/UI/UiButtonBig';
+import UiButton from '@components/UI/UiButton';
 import UiToggleFavorite from '@components/UI/UiToggleFavorite';
 
 import styles from './GamePage.module.scss';
@@ -54,7 +54,7 @@ const Game = ({ game }) => {
                         
                     </div>
                     <div className={styles.game__play}>
-                        <UiButtonBig 
+                        <UiButton 
                             text={'Play!'} 
                             onClick={() => {alert(`Starting '${game.name}'. Have fun!`)}} 
                         />
