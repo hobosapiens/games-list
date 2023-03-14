@@ -4,7 +4,7 @@ import {
 } from '@store/constants/actionTypes';
 import { setGames } from '@store/actions';
 import { getApiGames } from '@api/getApiGames';
-import { GAME_SERVICE } from '@constants';
+import { MOCK_GAMES } from '@constants';
 import { setGenres } from '../actions';
 import { setError } from '../actions';
 import { getLocalStorage } from '@utils/localStorage';
@@ -73,7 +73,7 @@ const getGenreFromUrl = url => {
 }
 
 export const loadGames = (state = initialState) => async (dispatch) => {
-    const res = await getApiGames(GAME_SERVICE);
+    const res = await getApiGames(MOCK_GAMES);
 
     if (!res) {
         dispatch(setError(true))
