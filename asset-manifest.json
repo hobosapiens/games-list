@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hobosapiens/games-list/static/css/main.827fb532.css",
+    "main.js": "/hobosapiens/games-list/static/js/main.dc5d3d00.js",
+    "index.html": "/hobosapiens/games-list/index.html",
+    "main.827fb532.css.map": "/hobosapiens/games-list/static/css/main.827fb532.css.map",
+    "main.dc5d3d00.js.map": "/hobosapiens/games-list/static/js/main.dc5d3d00.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.827fb532.css",
+    "static/js/main.dc5d3d00.js"
+  ]
+}
