@@ -10,6 +10,10 @@ const routesConfig = [
         element: <Navigate replace to="/spel" />
     },
     {
+        path: '/games-list',
+        element: <Navigate replace to="/spel" />
+    },
+    {
         path: '/spel',
         element: <GamesPage />
     },

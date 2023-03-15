@@ -2,7 +2,7 @@
   "name": "games-list",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/hobosapiens/games-list",
+  "homepage": "https://hobosapiens.github.io/games-list",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
     "@testing-library/jest-dom": "^5.16.5",
