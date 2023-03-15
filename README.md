@@ -1,11 +1,8 @@
-# To start the project:
+## Test task on React
 
-### `> npm i`
-### `> npm start`
+GitHub pages: https://hobosapiens.github.io/games-list
 
-Unfortunately, I did not have enough time to implement everything planned in the project. It's been a busy sprint at my job. I had to leave the project without testing coverage, I didn’t have time to add the library for gradually load the list of games and many other little things.
-
-However, what I have done:
+What I have done:
 - spa with game list data loading
 - the ability to add games to favorites
 - the ability to go to the game page
@@ -23,5 +20,11 @@ Technologies used:
 - sass, css variables and classnames library to work with styles
 - react-lorem-ipsum to generate game descriptions
 
-I hope the application works correctly, but if not, please contact me. 
+### To start the project locally:
+
+### `> npm i`
+### `> npm start`
+ 
 Thank you for your attention.
+
+
